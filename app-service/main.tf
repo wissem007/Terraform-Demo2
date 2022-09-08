@@ -1,21 +1,21 @@
-resource "azurerm_resource_group" "example" {
-  name     = "example-resources"
+resource "azurerm_resource_group" "wissem" {
+  name     = "wissem-resources"
   location = "West Europe"
 }
 
-resource "azurerm_service_plan" "example" {
-  name                = "example"
-  resource_group_name = azurerm_resource_group.example.name
-  location            = azurerm_resource_group.example.location
+resource "azurerm_service_plan" "wissem" {
+  name                = "wissem"
+  resource_group_name = azurerm_resource_group.wissem.name
+  location            = azurerm_resource_group.wissem.location
   os_type             = "Linux"
-  sku_name            = "P1v2"
+  sku_name            = "F1"
 }
 
-resource "azurerm_linux_web_app" "example" {
-  name                = "example"
-  resource_group_name = azurerm_resource_group.example.name
-  location            = azurerm_service_plan.example.location
-  service_plan_id     = azurerm_service_plan.example.id
+resource "azurerm_linux_web_app" "wissem" {
+  name                = "wissem"
+  resource_group_name = azurerm_resource_group.wissem.name
+  location            = azurerm_service_plan.wissem.location
+  service_plan_id     = azurerm_service_plan.wissem.id
 
   site_config {}
 }

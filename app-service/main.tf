@@ -1,3 +1,6 @@
+provider "azurerm" {
+   features {}
+}
 resource "azurerm_resource_group" "wissem" {
   name     = "wissem-resources"
   location = "West Europe"

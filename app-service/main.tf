@@ -11,7 +11,7 @@ resource "azurerm_service_plan" "wissem" {
   resource_group_name = azurerm_resource_group.wissem.name
   location            = azurerm_resource_group.wissem.location
   os_type             = "Linux"
-  sku_name            = "DS1_v2"
+  sku_name            = "P1v2"
 }
 
 resource "azurerm_linux_web_app" "wissem" {
